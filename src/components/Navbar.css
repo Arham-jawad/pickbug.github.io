@@ -1,0 +1,142 @@
+/* Navbar.css */
+
+/* Navbar.css */
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px; /* Adjust padding as needed */
+}
+
+.navbar-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-item {
+  margin: 0 15px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.navbar-item:hover {
+  transform: scale(1.05);
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: #343a40;
+  font-weight: bold;
+  display: flex;
+  align-items: center; /* Center items vertically */
+}
+
+.navbar-link:hover {
+  color: #007bff;
+}
+
+/* Rest of your styles */
+
+
+.home-icon,
+.about-icon,
+.gallery-icon,
+.services-icon {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* Hamburger menu styles */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-right: 20px;
+}
+
+.bar {
+  width: 30px;
+  height: 3px;
+  margin: 3px 0;
+  background-color: #333;
+  transition: 0.4s;
+  transform-origin: 1px;
+}
+
+.open .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.open .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media (max-width: 768px) {
+  .navbar-toggle {
+      display: flex;
+      align-self: flex-end;
+      margin-right: 20px;
+      margin-top: 10px;
+  }
+
+  .bar {
+      width: 20px;
+  }
+
+  .navbar-list {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 80px;
+      right: 0;
+      background-color: #333;
+      width: 100%;
+      transition: 0.3s;
+      animation: slide-down 0.3s ease-in-out;
+  }
+
+  .navbar-list.open {
+      display: flex;
+  }
+
+  .navbar-item {
+      margin: 10px 0;
+      text-align: center;
+  }
+}
+
+@media (min-width: 769px) {
+  .navbar-container {
+      justify-content: space-between;
+  }
+
+  .navbar-list {
+      display: flex;
+      flex-direction: row;
+  }
+
+  .navbar-item {
+      margin: 0 20px;
+  }
+}
+
+@keyframes slide-down {
+  0% {
+      transform: translateY(-100%);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
